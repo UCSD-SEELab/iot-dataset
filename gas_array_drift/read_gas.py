@@ -2,6 +2,7 @@
 # coding: utf-8
 
 import numpy as np
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
 
 ###############################################
 # Data import functions
@@ -19,6 +20,21 @@ def read_gas_data(filename):
 
 	x, y = np.array(x), np.array(y)
 	return x, y
+
+def normalize_data(data, scaler_name='Standard'):
+	if scaler_name == 'Robust':
+		scaler = RobustScaler()
+
+	elif scaler_name == 'Standard':
+		scaler = StandardScaler()
+
+	elif scaler_name == 'MinMax':
+		scaler = MinMaxScaler(feature_range=(0, 1))
+
+	scaled_data = scaler.fit_transform(
+		np.reshape(data, (-1, data.shape[-1]))).reshape((-1,) + data.shape[1:])
+
+	return scaled_data, scaler
 
 
 ###############################################
@@ -180,16 +196,12 @@ def main():
 	x1, y1 = read_gas_data('batch1.dat')
 	print(x1.shape, y1.shape)
 
-	# normalize x along each dimension in this batch to between (-1, 1)
-	x1max = np.amax(x1, axis=0)
-	x1mean = np.mean(x1, axis=0)
-	x1min = np.amin(x1, axis=0)
-	x1scale = 1 / np.maximum(x1max - x1mean, x1mean - x1min)
-	x1 = (x1 - x1mean) * x1scale
+	# normalize data
+	x1, scaler = normalize_data(x1)
 
 	# read batch10 and normalize the same as batch1
 	x10, y10 = read_gas_data('batch10.dat')
-	x10 = (x10 - x1mean) * x1scale
+	x10 = scaler.transform(x10)
 
 	##########################################
 	# Scatter plots

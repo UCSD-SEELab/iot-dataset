@@ -27,5 +27,5 @@ This data set contains 13,910 measurements from 16 chemical sensors exposed to 6
 ## Get Started
 
 * Download the dataset from UCI's repository and put all `.dat` files in this directory
-* Run `python3 read_gas.py` to import data and visualize. Need `numpy`.
+* Run `python3 read_gas.py` to import data and visualize. Need `numpy` and `sklearn.preprocessing`.
 
