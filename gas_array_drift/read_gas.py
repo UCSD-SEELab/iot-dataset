@@ -3,6 +3,7 @@
 
 import numpy as np
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
+import matplotlib.pyplot as plt
 
 ###############################################
 # Data import functions
@@ -59,7 +60,6 @@ def plot_gas_data(x, y, plot_3d=False, title='', fig_name=''):
 		title: title of plot, '' means no title
 		fig_name: the name of the figure to be saved, '' means do not save
 	"""
-	import matplotlib.pyplot as plt
 	scatter_size = 20
 
 	fig = plt.figure()
@@ -102,7 +102,6 @@ def pca_plot_gas_data(x, y, plot_3d=False, title='', fig_name=''):
 		title: title of plot, '' means no title
 		fig_name: the name of the figure to be saved, '' means do not save
 	"""
-	import matplotlib.pyplot as plt
 	from sklearn.decomposition import PCA
 	scatter_size = 20
 
@@ -151,7 +150,6 @@ def plot_gas_data_compare(x, y, y_hat, title='', fig_name=''):
 		title: title of plot, '' means no title
 		fig_name: the name of the figure to be saved, '' means do not save
 	"""
-	import matplotlib.pyplot as plt
 	scatter_size = 20
 
 	fig = plt.figure(figsize=(9, 4))
