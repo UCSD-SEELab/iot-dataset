@@ -6,7 +6,7 @@
 
 **Number of instances:** 13910
 
-**Number of Attributes: ** 129
+**Number of Attributes:** 129
 
 **Cite:** 
 
