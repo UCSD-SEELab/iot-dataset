@@ -4,9 +4,9 @@
 
 **Task:** Classification of sleep stages based on raw single channel EEGs
 
-**Number of instances: **
+**Number of instances:**
 
-**Number of attributes: **
+**Number of attributes:**
 
 This dataset contains 197 whole-night PolySomnoGraphic sleep recordings. The construct the samples by duplicating minority sleep stages to create a class balance training set, where all sleep stages have the same number of samples. 
 
