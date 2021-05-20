@@ -18,7 +18,7 @@ Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., .
 
 ## Getting started
 
-Using the [deepsleepnet repo](https://github.com/akaraspt/deepsleepnet) , the dataset can be downloaded by running `download_physionet.sh` . This scripts downloads the dataset directly from the source, [ Physionet ](https://www.physionet.org/content/sleep-edfx/1.0.0/ ). To preprocess the dataset, run  `preparephysionet.py` , which 
+Using the [deepsleepnet repo](https://github.com/akaraspt/deepsleepnet) , the dataset can be downloaded by running `download_physionet.sh` . This scripts downloads the dataset directly from the source, [ Physionet ](https://www.physionet.org/content/sleep-edfx/1.0.0/ ). To preprocess the dataset, run  `python preparephysionet.py` , which 
 
 - Merges the N3 and N4 stages into a single stage 
 - Only includes data from 30 minutes before and after sleep periods, as the task is only concerned with classifiying sleep stages. 
