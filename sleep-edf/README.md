@@ -13,7 +13,16 @@ This dataset contains 197 whole-night PolySomnoGraphic sleep recordings. The con
 **Cite:** 
 
 ```
-Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., ... & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220.
+@article{gold2000physio,
+  title={PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals},
+  author={Goldberger, A. and Amaral, L. and Glass, L. and Hausdorff, J. and Ivanov, P. C. and Mark, R. and Mietus, Joseph E. and Moody, George B and Peng, Chung Kang and Stanley, H Eugene},
+  journal={Circulation},
+  volume={1},
+  number={23},
+  pages={e215–e220},
+  year={2000},
+  publisher={Lippincott Williams & Wilkins},
+}
 ```
 
 ## Getting started
