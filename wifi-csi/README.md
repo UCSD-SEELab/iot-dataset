@@ -10,7 +10,8 @@
 
 **Cite:**
 
-```@article{yousefi2017behavior,
+```
+@article{yousefi2017behavior,
   title={A Survey on Behavior Recognition Using WiFi Channel State Information},
   author={Yousefi, Siamak and Narui, Hirokazu and Dayal, Sankalp and Ermon, Stefano and Valaee, Shahrokh},
   journal={IEEE Communications Magazine},
