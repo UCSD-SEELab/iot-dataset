@@ -31,7 +31,6 @@ This dataset contains 197 whole-night PolySomnoGraphic sleep recordings. The con
 
 Using the [deepsleepnet repo](https://github.com/akaraspt/deepsleepnet) , the dataset can be downloaded by running `download_physionet.sh` . This scripts downloads the dataset directly from the source, [ Physionet ](https://www.physionet.org/content/sleep-edfx/1.0.0/ ). To preprocess the dataset, run  `python preparephysionet.py` , which 
 
-- Merges the N3 and N4 stages into a single stage 
 - Only includes data from 30 minutes before and after sleep periods, as the task is only concerned with classifiying sleep stages. 
 - Removes unknown and movement labels from the dataset
 
