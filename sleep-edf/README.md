@@ -8,7 +8,7 @@
 
 **Number of attributes:** 2
 
-**Number of classes:** 8
+**Number of classes:** 8 (W, R, 1, 2, 3, 4, M, ?)
 
 This dataset contains 197 whole-night PolySomnoGraphic sleep recordings. The construct the samples by duplicating minority sleep stages to create a class balance training set, where all sleep stages have the same number of samples. 
 
