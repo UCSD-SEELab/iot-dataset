@@ -4,7 +4,7 @@
 
 **Task:** Classification of sleep stages based on raw single channel EEGs
 
-**Number of instances:**
+**Number of instances:** 212825
 
 **Number of attributes:** 2
 
