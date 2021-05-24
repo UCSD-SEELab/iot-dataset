@@ -6,7 +6,7 @@
 
 **Number of instances:** 
 
-**Number of attributes:** 
+**Number of attributes:** 1
 
 **Cite:**
 
