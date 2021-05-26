@@ -8,6 +8,8 @@
 
 **Number of attributes:** 1
 
+**Number of classes:** 6 (lay down, fall , walk, run, sit down, stand up)
+
 **Cite:**
 
 ```
@@ -25,7 +27,7 @@
 
 
 
-To create the samples, 6 people were recorded doing 6 activities ((lay down, fall , walk, run, sit down, stand up) for 20 seconds, with 20 trials of each acitivity per person. The Rx (commercial Intel 5300 NIC) sampled at a rate of 1 kHz. 
+To create the samples, 6 people were recorded doing 6 activities (lay down, fall , walk, run, sit down, stand up) for 20 seconds, with 20 trials of each acitivity per person. The Rx (commercial Intel 5300 NIC) sampled at a rate of 1 kHz. 
 
 ## Getting Started
 
