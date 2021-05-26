@@ -28,7 +28,7 @@ The samples are constructed using blood volume pulse, electrodermal activity, an
 
 ## Get Started
 
-Clone the [WESAD repo](https://github.com/WJMatthew/WESAD). Download this dataset from UCI's repository and run the command `python3 data_wrangling.py` to preprocess this dataset. In the preprocessing, 
+Clone the [WESAD repo](https://github.com/WJMatthew/WESAD). Download this dataset [here](https://uni-siegen.sciebo.de/s/HGdUkoNlW1Ub0Gx) and run the command `python3 data_wrangling.py` to preprocess this dataset. In the preprocessing, 
 
 - 30 second segments are extracted and independantly normalize for each subject's data
 - EMG signals 
