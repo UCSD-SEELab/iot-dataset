@@ -8,6 +8,8 @@
 
 **Number of attributes:** 12
 
+**Number of classes:** 3 (Baseline, stress, amusement)
+
 **Cite:** 
 
 ``` 
