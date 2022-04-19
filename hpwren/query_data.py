@@ -117,7 +117,7 @@ year = ['2021'] # year of data to request
 
 filePattern = ":0R0:4:0"
 header = ['t', 'Dn', 'Dm', 'Dx', 'Sn', 'Sm', 'Sx', 'Ta', 'Ua', 'Pa', 'Rc', 'Rd', 'Ri'] # type of sensor readings to request
-"""
+
 for y in year:
     # remove existing folder (if exists) and create a new folder for the given year
     if os.path.exists(y):
@@ -154,7 +154,7 @@ for y in year:
             # write queried data to csv
             filepath = '{}/{}/{}.csv'.format(y, loc, d)
             write_csv(filepath, header, fileData)
-"""
+
 
 # 2. Average and reorganze data. Store the formatted data under the year's
 # directory, with the readings of each location in the corresponding year being in one csv file.
