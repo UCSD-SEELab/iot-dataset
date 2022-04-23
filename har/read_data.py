@@ -126,4 +126,5 @@ def main():
     print('Data saved to json')
 
 
-
+if __name__ == "__main__":
+    main()
