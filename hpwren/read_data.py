@@ -70,7 +70,7 @@ def main():
     test_data_dict = copy.deepcopy(data_dict)
     for user in data_dict['user_data']:  # Clear existing data in new train and test dict
         total_len = len(data_dict['user_data'][user]['x'])
-        select = np.random.choice(total_len, int(0.9*total_len), replace=False)
+        select = np.random.choice(total_len, int(args.tf*total_len), replace=False)
         select.sort()
         not_select = list(set(np.arange(total_len)) - set(select))
         not_select.sort()
