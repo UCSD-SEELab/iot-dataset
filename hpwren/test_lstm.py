@@ -63,7 +63,7 @@ test_data = sliding_window(test_data, win_size) # N_test, win_size, 12
 ########## model ##########
 #model = RNN(input_size, hidden_size, output_size, num_layers).to(device)
 model = LSTM(input_size, hidden_size, output_size, num_layers, device).to(device)
-#model = GRU(input_size, hidden_size, output_size, num_layers, device).to(device)
+#model = GRU(input_size, hidden_size, output_size, num_layers).to(device)
 #model = CNN(input_size, hidden_size, output_size, win_size-1).to(device)
 #model = MLP(input_size, hidden_size, output_size, win_size-1).to(device)
 
@@ -105,3 +105,5 @@ for epoch in range(num_epochs):
         err += len(batch_data) * criterion(gt, pred)
 
     print("Epoch: %d, MSE: %1.5f" % (epoch, err.item() / len(test_data)))
+
+    torch.save(model.state_dict(), 'global')
