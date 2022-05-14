@@ -7,6 +7,12 @@
 import glob
 import os
 import json
+import numpy as np
+
+def z_norm(x):
+    mean = np.nanmean(x, axis=0)
+    var = np.nanstd(x, axis=0)
+    return mean, var
 
 def read_data(folder):
     X, y, subject = [], [], []
@@ -32,6 +38,14 @@ def read_data(folder):
         for line in lines:
             subject.append(line.strip())
 
+    return np.array(X), np.array(y).reshape((-1, 1)), np.array(subject).reshape((-1, 1))
+
+
+def construct_dict(X, y, subject):
+    # Convert from numpy array to list
+    X = X.tolist()
+    y = y.tolist()
+    subject = subject.tolist()
 
     data = {}
     data['users'] = []
@@ -51,9 +65,6 @@ def read_data(folder):
         user_name = data['users'][i]
         data['num_samples'].append(len(data['user_data'][user_name]['x']))
 
-    print('loaded users from {}: '.format(folder), data['user_data'].keys())
-    print('loaded num_samples {}: '.format(folder), data['num_samples'])
-
     return data
 
 
@@ -66,24 +77,38 @@ def save_data(data_dict, file_name):
 # In[64]:
 
 
-data_dict = read_data('./UCI HAR Dataset/train')
+X_train, y_train, subject_train = read_data('./UCI HAR Dataset/train')
+print(X_train.shape, y_train.shape, subject_train.shape)
 
-test_data_dict = read_data('./UCI HAR Dataset/test')
+X_test, y_test, subject_test = read_data('./UCI HAR Dataset/test')
+print(X_test.shape, y_test.shape, subject_test.shape)
+
 
 # Because the original dataset partitions train and test dataset using diff users
+# We here combine the original train and test data
+X = np.concatenate((X_train, X_test), axis=0)
+y = np.concatenate((y_train, y_test), axis=0).reshape((-1))
+subject = np.concatenate((subject_train, subject_test), axis=0).reshape((-1))
+
+print('Shape of data: ', X.shape, y.shape, subject.shape)
+
+mean, var =  z_norm(X)
+#print('Mean: {} Var: {}'.format(mean, var))
+
+X = (X - mean) / var
+
+data_dict = construct_dict(X, y, subject)
+
+
 # We here load all data in the original train and test folders, and split it with tf portion for training
 # and (1-tf) portion for testing
-data_dict['users'] += test_data_dict['users']
-data_dict['user_data'].update(test_data_dict['user_data'])
-data_dict['num_samples'] += test_data_dict['num_samples']
-print('after combining from train and test folder, users are: ', data_dict['user_data'].keys())
-print('after combining from train and test folder, num_samples are: ', data_dict['num_samples'])
+print('Users are: ', data_dict['user_data'].keys())
+print('Num_samples are: ', data_dict['num_samples'])
 
 
 # In[65]:
 
 
-import numpy as np
 import copy
 import argparse
 
