@@ -48,6 +48,13 @@ This directory provides scripts to query and pre-process raw sensor data from HP
                 'Sm', 'Sx', 'Ta', 'Ua', 'Pa', 'Rc', 'Rd', 'Ri']
   ```
 
-  The query process make take 1-2 hours.
+  The query process may take 1-2 hours. All downloaded data will be stored in the folders named by the year, e.g., a folder named '2021'.
 
-* 
+* (Optional) Test ARIMA model with `test_arima.ipynb`.
+
+* (Optional) Test RNN, LSTM, GRU, CNN, MLP with `test_lstm.py`. The part is contributed by [Xiyuan Zhang](https://xiyuanzh.github.io/).
+
+* (Optional) Use `read_data.py` to generate dataset for Federated Learning, following the same format as the [LEAF dataset](https://leaf.cmu.edu/).
+
+  * `--tf` := fraction of data in training set, written as a decimal; default is 0.9
+  * `--ws` := window size of data, int; default is 24, where the first 23 samples are used as input and the last sample is used as the ground-truth target.
